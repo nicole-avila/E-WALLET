@@ -1,0 +1,46 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_variables.scss';
+
+
+.card-form {
+    text-align: left;
+    padding: 0 .8rem;
+
+
+    & p, label {
+        @include text;
+        margin: 0;
+    }
+    &__bigfield {
+        width: 382px;
+        height: 56px;
+        left: 16px;
+        top: 440px;
+
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+    
+    &__smallfields {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    &__smallfield {
+        width: 175px;
+        height: 56px;
+        left: 16px;
+        top: 615px;
+
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 8px;
+    }
+
+    &__btn {
+        @include btnAddCard;
+    }
+}
+
+

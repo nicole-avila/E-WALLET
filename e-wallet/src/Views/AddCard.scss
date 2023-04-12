@@ -1,0 +1,14 @@
+@import '../scss/_mixins.scss';
+@import '../scss/_variables.scss';
+
+
+.addCard{
+    @include container;
+    // @include center;
+
+    &__back {
+        display: flex;
+        padding: .5rem;
+
+    }
+}
