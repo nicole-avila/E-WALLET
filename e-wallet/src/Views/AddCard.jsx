@@ -6,7 +6,7 @@ import CardForm from '../Components/CardForm/CardForm';
 
 import { useNavigate  } from 'react-router-dom';
 
-function AddCard() {
+function AddCard({ cardNumber, cardHolder, validThru }) {
     const navigate = useNavigate()
 
 
@@ -19,7 +19,7 @@ function AddCard() {
         <div className='addCard'>
             <img onClick={ backToHome } src={ goBack } className='addCard__back' alt="black circle with an white arrow in it" />
             <Top title="add a new bank card" />
-            <Card />
+            <Card cardNumber={cardNumber} cardHolder={cardHolder} validThru={validThru}/>
             <CardForm />
         </div>
   

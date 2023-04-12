@@ -1,37 +1,52 @@
 import './CardForm.scss';
+import { addNewCard } from '../../Action/action';
+
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function CardForm() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    // const creditCards = useSelector((state)=> {return state.creditCards})
+
+
     const [cardInfo, setCardInfo] = useState( {
         cardNumber: '',
-        fullname: '',
-        valid: '',
+        cardHolder: '',
+        validThru: '',
         ccv: '',
-        selected: ''
+        vendor: ''
     })
 
     function handleChange(e) {
         const {name, value} = e.target;
 
-        setCardInfo((prev) => {
-            return { ...prev, [name]: value };
+        setCardInfo((currentState) => {
+            return { ...currentState, [name]: value };
         });
-    };
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(cardInfo);
+        const newCard = {
+            user: cardInfo
+        }
+        dispatch(addNewCard(newCard))
+        navigate('/')
     };
+    console.log(cardInfo);
 
     return( 
         <form className='card-form' onSubmit={ handleSubmit }>
             <p>card number</p>
-            <input className='card-form__bigfield' type="text" name='cardNumber' onChange={ handleChange } />
+            <input className='card-form__bigfield' type="text" name='cardNumber' onChange={ handleChange } /> 
             <p>cardholder name</p> 
-            <input className='card-form__bigfield' type="text" placeholder=' FIRSTNAME & LASTNAME' name='fullname' onChange={ handleChange } />
+            <input className='card-form__bigfield' type="text" placeholder=' FIRSTNAME & LASTNAME' name='cardHolder' onChange={ handleChange } />
             <article className='card-form__smallfields'>
                 <article>
-                    <p>valid thru</p> <input className='card-form__smallfield' type="text" name='valid' onChange={ handleChange } />
+                    <p>valid thru</p> <input className='card-form__smallfield' type="text" name='validThru' onChange={ handleChange } />
                 </article>
                 <article>
                 <p>ccv</p> <input className='card-form__smallfield' type="text" name='ccv' onChange={ handleChange } />

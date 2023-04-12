@@ -4,11 +4,11 @@
 
 .addCard{
     @include container;
-    // @include center;
-
+    @include center;
     &__back {
         display: flex;
         padding: .5rem;
+        margin-right: auto;
 
     }
 }

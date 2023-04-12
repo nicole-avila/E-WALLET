@@ -9,9 +9,6 @@
     font-weight: 400;
     margin-bottom: 2.5rem;
     
-    &__title2 {
-        @include title2;
-    }
     &__images {
         display: flex;
         justify-content: space-between;

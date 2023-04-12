@@ -1,6 +1,7 @@
 import './Home.scss';
 import Top from '../Components/Top/Top';
 import Card from '../Components/Card/Card';
+import CardStack from '../Components/CardStack/CardStack';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -14,16 +15,13 @@ function Home() {
 
     return( 
         <div className='home'>
-            <Top title="E-wallet" />
-            <section className='home__card'>
-                <Card />
-            </section>
+            <Top title="E-wallet" title2='active card' />
 
-            
-            <section>
-            <button className='home__btn' onClick={ handleClick }>add a new card</button>
+            <section className='home__card'>
+            <Card />
+            <CardStack />
             </section>
-            
+            <button className='home__btn' onClick={ handleClick }>add a new card</button>
         </div>
 
     )

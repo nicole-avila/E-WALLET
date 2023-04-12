@@ -8,4 +8,7 @@
         @include title;
         margin-bottom: 2rem;
     }
+    &__title2 {
+        @include title2;
+    }
 }
