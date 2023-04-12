@@ -1,7 +1,7 @@
 import './CardStack.scss';
 import Card from '../Card/Card';
-
 import { useSelector } from 'react-redux';
+import CardForm from '../CardForm/CardForm';
 
 function CardStack() {
     const creditCards = useSelector((state)=> {return state.creditCards})
@@ -15,6 +15,7 @@ function CardStack() {
          />
         )
     })
+    console.log(CardStackComponents);
 
     return( 
         <div>

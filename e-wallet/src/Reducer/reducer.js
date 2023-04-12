@@ -1,15 +1,9 @@
 const initialState = {
-    creditCards: [{
-        cardNumber: 'XXXX XXXX XXXX XXXX',
-        cardHolder: '',
-        validThru: '',
-        ccv: '',
-        vendor: ''
-    }]
+    creditCards: []
 }
 
 const reducer = (state = initialState, action) => {
-    switch (action.payload) {
+    switch (action.type) {
         case 'ADD_NEW_CARD':
             return {
                 ...state,
@@ -27,3 +21,10 @@ const reducer = (state = initialState, action) => {
 
 export default reducer;
 
+// {
+//     cardNumber: 'XXXX XXXX XXXX XXXX',
+//     cardHolder: '',
+//     validThru: '',
+//     ccv: '',
+//     vendor: ''
+// }

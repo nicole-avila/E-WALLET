@@ -1,11 +1,14 @@
 @import '../../scss/_mixins.scss';
 @import '../../scss/_variables.scss';
 
-
-.card-form {
+.card-form--container {
+    @include center;
+}
+  .card-form {
     text-align: left;
-    padding: 0 .8rem;
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
     & p, label {
         @include text;
@@ -41,6 +44,4 @@
     &__btn {
         @include btnAddCard;
     }
-}
-
-
+  }

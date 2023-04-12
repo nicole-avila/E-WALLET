@@ -23,7 +23,6 @@ function Home() {
             </section>
             <button className='home__btn' onClick={ handleClick }>add a new card</button>
         </div>
-
     )
 }
 

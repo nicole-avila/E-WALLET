@@ -1,13 +1,11 @@
 import './Card.scss';
 import Bitcoin from '../../assets/Bitcoin logo.svg'
 import AirPayDark from '../../assets/Group 6.svg'
-import { addNewCard } from '../../Action/action';
 
 import { useSelector } from 'react-redux';
 
-function Card({ cardNumber, cardHolder, validThru }) {
-    const creditCards = useSelector((state)=> {return state.creditCards})
-
+function Card( { cardNumber, cardHolder, validThru }) {
+    // const creditCards = useSelector((state)=> {return state.creditCards})
 
     return( 
         <div>
@@ -32,5 +30,3 @@ function Card({ cardNumber, cardHolder, validThru }) {
 }
 
 export default Card
-
-// { cardNumber, cardHolder, validThru }
