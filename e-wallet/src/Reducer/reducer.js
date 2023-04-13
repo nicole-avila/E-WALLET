@@ -1,5 +1,6 @@
 const initialState = {
-    creditCards: []
+    creditCards: [],
+    activeCard: {}
 }
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 creditCards: [...state.creditCards, action.payload]
+            }
+        case 'ACTIVE_CARD':
+            return {
+                ...state,
+                activeCard: action.payload
             }
         case 'REMOVE_ONE_CARD':
             return {

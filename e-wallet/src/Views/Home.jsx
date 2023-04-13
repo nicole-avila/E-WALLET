@@ -5,9 +5,9 @@ import CardStack from '../Components/CardStack/CardStack';
 
 import { useNavigate } from 'react-router-dom';
 
+
 function Home() {
     const navigate = useNavigate();
-
 
     function handleClick() {
         navigate('/addcard')
@@ -15,12 +15,15 @@ function Home() {
 
     return( 
         <div className='home'>
-            <Top title="E-wallet" title2='active card' />
-
-            <section className='home__card'>
-            <Card />
-            <CardStack />
-            </section>
+            <article className='home__top'>
+                <Top title="E-wallet" title2='active card' />
+            </article>
+                <article className='home__card'>
+                    <Card />
+                </article>
+                <article className='home__cardStack' >
+                    <CardStack />
+                </article>
             <button className='home__btn' onClick={ handleClick }>add a new card</button>
         </div>
     )
@@ -28,3 +31,4 @@ function Home() {
 
 export default Home
 
+// { cardNumber, cardHolder, validThru }

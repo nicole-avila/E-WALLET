@@ -10,5 +10,11 @@ $grey: linear-gradient(0deg, #D0D0D0, #D0D0D0),linear-gradient(248.3deg, rgba(25
 
 
 
+$margin-minus: -8rem; 
+
+
+:export {
+    margin: $margin-minus;
+}
 
 

@@ -13,7 +13,7 @@ function CardForm() {
     const [cardNumber, setCardNumber] = useState('')
     const [cardHolder, setCardHolder] = useState('')
     const [validThru, setValidThru] = useState('')
-    const [cvv, setCvv] = useState('')
+    const [ccv, setCcv] = useState('')
     const [vendor, setVendor] = useState('')
     const [focus, setFocus] = useState('')
 
@@ -23,7 +23,7 @@ function CardForm() {
             cardNumber: cardNumber,
             cardHolder: cardHolder,
             validThru: validThru,
-            ccv: cvv,
+            ccv: ccv,
             vendor: vendor
         }
         dispatch(addNewCard(user))
@@ -47,7 +47,7 @@ function CardForm() {
                 </article>
                 <article>
                 <p>ccv</p>
-                <input className='card-form__smallfield' type="text" name='ccv' onChange={ (event) => setCvv(event.target.value) }  />
+                <input className='card-form__smallfield' type="text" name='ccv' onChange={ (event) => setCcv(event.target.value) }  />
                 </article>
             </article>
             <label htmlFor="">vendor</label>
