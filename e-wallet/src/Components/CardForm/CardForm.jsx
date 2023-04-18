@@ -52,8 +52,8 @@ function CardForm() {
             </article>
             <label htmlFor="">vendor</label>
             <select className='card-form__bigfield' name='vendor' onChange={ (event) => setVendor(event.target.value) }>
-                <option value="nada"></option>
-                <option value="bitcoin inc">bitcoin inc</option>
+                <option value=""> CHOOSE VENDOR </option>
+                <option variant='bitcoin' value="bitcoin inc">bitcoin inc</option>
                 <option value="njnja bank">njnja bank</option>
                 <option value="block chain">block chain</option>
                 <option value="evil corp">evil corp</option>
