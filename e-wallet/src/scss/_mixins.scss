@@ -3,8 +3,11 @@
 @mixin container {
     margin: auto;
     width: 414px;
-    height: 896px;
-    background: $white;
+    min-height: 900px;
+    max-height: 1000px;
+    background: $transparent;
+    border-radius: 8px;
+
 }
 
 @mixin center {
@@ -14,29 +17,28 @@
     align-items: center;
 }
 
-@mixin title {
+@mixin topTitle {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 700;
     font-size: 35px;
     max-width: 250px;
-    margin: 0 auto;
-
+    margin: 1rem auto;
     text-align: center;
     text-transform: uppercase;
     color: $black;
+    line-height: 100%;
 }
 
-@mixin title2 {
+@mixin topText {
     font-family: 'Source Sans Pro';
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
-
     text-align: center;
     text-transform: uppercase;
-    color: $title2;
+    color: $topText;
 }
 
 @mixin text {
@@ -46,16 +48,11 @@
     font-size: 12px;
     line-height: 13px;
     text-transform: uppercase;
-
 }
 
 @mixin cardContent {
     width: 382px;
     height: 241px;
-    left: 16px;
-    top: 138px;
-
-    /* Vendor Bitcoin - Orange */
     background: none;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -65,17 +62,20 @@
     text-transform: uppercase;
     width: 382px;
     height: 80px;
-    border: 1px solid #000000;
+    border: 2px solid rgb(88, 143, 153);
     border-radius: 8px;
     background: $white;
+    font-weight: 600;
+    color: rgb(88, 143, 153);
 }
 
 @mixin btnAddCard {
     text-transform: uppercase;
     width: 382px;
     height: 72px;
-    background: #000000;
+    background: $black;
+    border: 1px solid $black;
     border-radius: 8px;
     color: $white;
+    font-weight: 600;
 }
-

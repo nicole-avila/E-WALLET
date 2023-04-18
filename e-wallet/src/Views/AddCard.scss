@@ -2,12 +2,16 @@
 @import '../scss/_variables.scss';
 
 
-.addCard{
+.add-card{
     @include container;
-    @include center;
+
     &__back {
         display: flex;
         padding: .5rem;
         margin-right: auto;
+    }
+
+    &__top {
+        padding-bottom: 7rem;
     }
 }

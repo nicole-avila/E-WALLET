@@ -7,6 +7,10 @@
     font-family: 'PT Mono';
     font-style: normal;
     font-weight: 400;
+    margin: -6.2rem;
+    // z-index: 1;
+    background-color: honeydew;
+
     
     &__images {
         display: flex;
@@ -14,6 +18,7 @@
         padding: 1.4rem 1rem ;
         align-items: flex-start;
     }
+
     &__nr {
         font-size: 29px;
         line-height: 32px;
@@ -22,21 +27,21 @@
         margin: 0;
         margin-bottom: 1rem;
     }
+
     &__text {
         font-size: 12px;
         line-height: 1px;
         text-transform: uppercase;
-
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 1rem;
     }
-    &__text__info {
+
+    &__text--info {
         font-size: 18px;
         line-height: 1px;
         text-transform: uppercase;
-
         display: flex;
         align-items: center;
         justify-content: space-between;

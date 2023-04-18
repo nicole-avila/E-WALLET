@@ -4,15 +4,22 @@
 .card-stack {
     display: flex;
     justify-content: center;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    align-items: center;
 
-    &__card {
-        margin: -8rem;
-    }
+    max-height: 430px;
+    margin-top: 1rem;
+    padding: 2rem;
+
     &__grid {
         display: grid;
-        grid-template-columns: 382px;
+        // grid-template-columns: 382px;
         grid-template-rows: auto;
+        // max-height: 400px;
+        margin-top: 7rem;
+        min-height: 400px;
         max-height: 400px;
-        margin: 0;
+
     }
 }

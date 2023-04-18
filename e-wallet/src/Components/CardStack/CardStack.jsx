@@ -1,13 +1,11 @@
 import './CardStack.scss';
-// import CardStackSCSS from './CardStack.module.scss';
 import Card from '../Card/Card';
+import variables from '../../scss/_variables.scss'
 import { useSelector } from 'react-redux';
 
-import variables from '../../scss/_variables.scss'
 
 function CardStack() {
     const creditCards = useSelector((state)=> {return state.creditCards})
-    const SCSS = { backgroundColor: variables.margin}
 
     const CardStackComponents = creditCards.map((card, index) => {
         return( <Card 
@@ -18,8 +16,6 @@ function CardStack() {
         vendor={card.vendor}
         id= {card.cardNumber}
         key={index} 
-        // className={CardStackSCSS.margin}
-        style={SCSS}
         />
         )
     })
@@ -31,7 +27,6 @@ function CardStack() {
             { CardStackComponents }
             </article>
         </section>
-
     )
 }
 

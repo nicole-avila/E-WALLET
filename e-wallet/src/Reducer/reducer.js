@@ -19,18 +19,9 @@ const reducer = (state = initialState, action) => {
             return {
 
             }
-    
         default:
             return state
     }
 }
 
 export default reducer;
-
-// {
-//     cardNumber: 'XXXX XXXX XXXX XXXX',
-//     cardHolder: '',
-//     validThru: '',
-//     ccv: '',
-//     vendor: ''
-// }

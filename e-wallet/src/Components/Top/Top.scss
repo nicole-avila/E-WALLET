@@ -5,10 +5,9 @@
 .top {
     
     &__title {
-        @include title;
-        margin-bottom: 2rem;
+        @include topTitle;
     }
-    &__title2 {
-        @include title2;
+    &__text {
+        @include topText;
     }
 }
