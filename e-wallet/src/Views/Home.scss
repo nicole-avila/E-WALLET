@@ -4,9 +4,18 @@
 
 .home {
     @include container;
+    // display: flex;
+    // justify-content: center;
+    // display: grid;
+    // grid-template-rows: 80px 300px 400px 100px;
+    // @include center;
 
     &__top {
-        padding-top: .5rem;
+        padding-top: 1rem;
+    }
+
+    &__cards {
+        height: 700px;
     }
 
     &__card {
@@ -14,11 +23,16 @@
     }
 
     &__cardStack {
+        // max-width: 382px;
+        max-height: 400px;
+        display: grid;
+        // grid-template-columns: 382px;
+        grid-template-rows: auto;
         margin: auto    
     }
 
     &__card {
-        @include center; 
+           @include center; 
     }
 
     &__title {
@@ -28,9 +42,14 @@
     &__text {
         @include topText;
     }
-    
+    &__btn--container {
+        // display: flex;
+        // justify-content: center;
+        z-index: 2;
+  
+    }
     &__btn {
         @include btnHome;
-        margin: 1rem;
     }
+
 }

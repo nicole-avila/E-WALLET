@@ -16,7 +16,7 @@ function AddCard() {
         <section className= 'add-card'>
             <article className='add-card__top'>
                 <img onClick={ backToHome } src={ goBack } className='add-card__back' alt="black circle with an white arrow in it" />
-                <Top title='add a new bank card' text='new card'/>
+                <Top title="add a new bank card" />
             </article>
             <CardForm />
         </section>

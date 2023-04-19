@@ -1,5 +1,6 @@
 import './CardStack.scss';
 import Card from '../Card/Card';
+import variables from '../../scss/_variables.scss'
 import { useSelector } from 'react-redux';
 
 
@@ -23,7 +24,7 @@ function CardStack() {
     return( 
         <section className='card-stack'>
             <article className='card-stack__grid'>
-            { CardStackComponents  }
+            { CardStackComponents }
             </article>
         </section>
     )
