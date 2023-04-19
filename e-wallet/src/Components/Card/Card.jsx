@@ -1,6 +1,5 @@
 import './Card.scss';
-import Bitcoin from '../../assets/Bitcoin logo.svg';
-import AirPayDark from '../../assets/Group 6.svg';
+import AirPayDark from '../../assets/airpay-dark.svg';
 
 import { activeCard } from '../../Action/action';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,15 +19,17 @@ function Card({ cardNumber, cardHolder, validThru, ccv, vendor}) {
             vendor: vendor
         }
         dispatch(activeCard(getActiveCard))
-    };
+    };    
 
     return( 
-        <section className='card' onClick={ handleClick }>
+        <section className='card' onClick={ handleClick } style={{ ...vendor ? { backgroundColor: vendor.vendor.color, color: vendor.vendor.font }: {} }} >
             <article className='card__images'>
-                <img src= { AirPayDark} alt="" />
-                <img src= { Bitcoin } alt="" />
+                <img src= { vendor ? vendor.vendor.airpay : AirPayDark } alt="" />
+                <img src= { vendor ? vendor.vendor.image : '' } alt="" />
             </article>
-            <h1 className='card__nr'>{ cardNumber ? cardNumber : card.cardNumber }</h1> 
+
+            <h1 className='card__nr' style={{ ...vendor ? { color: vendor.vendor.font }: {} }} >{ cardNumber ? cardNumber : card.cardNumber }</h1> 
+            
             <article className='card__text'>
                 <p>cardholder name</p>
                 <p>Valid thru</p>
