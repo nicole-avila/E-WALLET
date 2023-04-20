@@ -1,8 +1,8 @@
 import './Home.scss';
 import Top from '../Components/Top/Top';
 import CardStack from '../Components/CardStack/CardStack';
-import { useNavigate } from 'react-router-dom';
 import ActiveCard from '../Components/ActiveCard/ActiveCard';
+import { useNavigate } from 'react-router-dom';
 
 
 function Home() {

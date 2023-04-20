@@ -15,18 +15,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 activeCard: action.payload
             }
-        case 'REMOVE_ONE_CARD':
- 
-           
-            return {
-  
-            }
         default:
             return state
     }
 }
 
 export default reducer;
-
-// const cardItem = state.cardItems.find((card) => card.id === payload.id);
-// cardItem.activeCard = cardItem.activeCard -1; 

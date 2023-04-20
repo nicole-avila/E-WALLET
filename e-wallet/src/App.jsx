@@ -1,8 +1,7 @@
 import './App.scss'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-
 import Home from './Views/Home';
 import AddCard from './Views/AddCard';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 
 const router = createBrowserRouter ([
@@ -17,7 +16,6 @@ const router = createBrowserRouter ([
 ])
 
 function App() {
-
 
   return (
     <div className="App">

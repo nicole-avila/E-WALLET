@@ -1,11 +1,12 @@
 import './Top.scss';
 
-function Top(props) {
+
+function Top({ title, text }) {
 
     return( 
         <section className='top'>
-            <h1 className='top__title'> { props.title } </h1>
-            <p className='top__text'>{ props.text }</p>
+            <h1 className='top__title'> { title } </h1>
+            <p className='top__text'>{ text }</p>
         </section>
     )
 }

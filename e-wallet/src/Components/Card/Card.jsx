@@ -1,14 +1,12 @@
 import './Card.scss';
 import AirPayDark from '../../assets/airpay-dark.svg';
-
 import { activeCard } from '../../Action/action';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-function Card({ cardNumber, cardHolder, validThru, ccv, vendor}) {
+function Card({ cardNumber, cardHolder, validThru, ccv, vendor }) {
     const dispatch = useDispatch();
     const card = useSelector((state) => { return state.activeCard});
-
 
     function handleClick() {
         let getActiveCard = {

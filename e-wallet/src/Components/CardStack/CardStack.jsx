@@ -18,7 +18,6 @@ function CardStack() {
         />
         )
     })
-    console.log(CardStackComponents);
 
     return( 
         <section className='card-stack'>

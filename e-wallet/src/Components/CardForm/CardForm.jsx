@@ -22,21 +22,6 @@ function CardForm() {
     const [ccv, setCcv] = useState('')
     const [vendor, setVendor] = useState('')
     const [focus, setFocus] = useState('')
-    // const [card, setCard] = useState('')
-    
-    // function handleCardDisplay() {
-    //     const rawText = [...card.split(' ').join(' ')]
-    //     const creditCard = []
-    //     rawText.forEach((t, i) => {
-    //         if(i % 4 === 0 && i !== 0) creditCard.push(' ')
-    //         creditCard.push(t)
-    //     })
-    //     return creditCard.join(' ')
-    // }
-
-    function handleCardNumber(e) {
-        setCardNumber(e.target.value)
-    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -106,7 +91,6 @@ function CardForm() {
             ...prevCard,
             vendor: optionVendorObject
         }))
-        console.log(optionVendorObject);
     };
 
     return( 
@@ -117,7 +101,7 @@ function CardForm() {
 
             <form className='card-form__form' onSubmit={ handleSubmit }>
                 <p>card number</p>
-                <input className='card-form__bigfield' type="tel" maxLength={16} minLength={16} placeholder=' XXXX XXXX XXXX XXXX' name='cardNumber' value={ cardNumber } onChange={ handleCardNumber } onFocus={event => setFocus(event.target.name)} /> 
+                <input className='card-form__bigfield' type="tel" maxLength={16} minLength={16} placeholder=' XXXX XXXX XXXX XXXX' name='cardNumber' value={ cardNumber } onChange={ (event) => setCardNumber(event.target.value) } onFocus={event => setFocus(event.target.name)} /> 
                 <p>cardholder name</p> 
                 <input className='card-form__bigfield' type="text" placeholder=' FIRSTNAME & LASTNAME' name='cardHolder' value={cardHolder} onChange={ (event) => setCardHolder(event.target.value) } onFocus={event => setFocus(event.target.name)} />
                 <article className='card-form__smallfields'>

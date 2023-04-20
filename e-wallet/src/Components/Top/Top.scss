@@ -7,6 +7,7 @@
     &__title {
         @include topTitle;
     }
+    
     &__text {
         @include topText;
         margin-bottom: 0;

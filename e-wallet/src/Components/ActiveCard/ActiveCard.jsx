@@ -9,7 +9,7 @@ function ActiveCard() {
     return(
         <section className='card'  style={{ ...active?.vendor ? { backgroundColor: active.vendor.vendor.color }: {} }} >
             <article className='card__images'>
-                <img src= { active?.vendor ? active.vendor.vendor.airpay : {AirPayDark} } alt="" />
+                <img src= { active?.vendor ? active.vendor.vendor.airpay : AirPayDark } alt="" />
                 <img src= { active?.vendor ? active.vendor.vendor.image : '' } alt="" />
             </article>
 
