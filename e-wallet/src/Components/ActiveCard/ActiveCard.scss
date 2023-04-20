@@ -4,16 +4,21 @@
 
 .card{
     @include cardContent;
-    background: #e6e9f5;
-    text-shadow: 0.5px 0.5px 0px 0px #0000008C;
-    margin: -6.2rem;
+    font-family: 'PT Mono';
+    font-style: normal;
+    font-weight: 400;
+    margin: -6rem;
     z-index: 1;
+    background-color: #e6e9f5;
     
     &__images {
         display: flex;
         justify-content: space-between;
         padding: 1.4rem 1rem ;
         align-items: flex-start;
+    }
+    &__remove {
+        cursor: pointer;
     }
 
     &__nr {
@@ -29,16 +34,18 @@
         font-size: 12px;
         line-height: 1px;
         text-transform: uppercase;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 0 1rem;
     }
 
-    &__text--info {
+    &__text__info {
         font-size: 18px;
         line-height: 1px;
         text-transform: uppercase;
+
         display: flex;
         align-items: center;
         justify-content: space-between;
