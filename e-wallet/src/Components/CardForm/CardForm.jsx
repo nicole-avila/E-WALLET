@@ -34,7 +34,6 @@ function CardForm() {
         }
         dispatch(addNewCard(user))
         navigate('/');
-        console.log(user);
     };
 
     function handleSelect(e) {
