@@ -23,6 +23,26 @@ function CardForm() {
     const [vendor, setVendor] = useState('')
     const [focus, setFocus] = useState('')
 
+
+    const handleCardNumberDisplay = () => {
+        const numberText = [...cardNumber.split(' ').join('')]
+        const card = []
+        numberText.forEach((t, i) => {
+            if(i % 4 === 0 && i !== 0) card.push(' ')
+            card.push(t)
+        })
+        return card.join('')
+    }
+    const handleValidDisplay = () => {
+        const validText = [...validThru.split('/').join('')]
+        const cardValid = []
+        validText.forEach((t, i) => {
+            if(i % 2 === 0 && i !== 0) cardValid.push('/')
+            cardValid.push(t)
+        })
+        return cardValid.join('')
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         const user = {
@@ -95,24 +115,44 @@ function CardForm() {
     return( 
         <section className='card-form'>
             <article className='card-form__card-component'>
-            <Card  cardNumber={cardNumber} cardHolder={cardHolder} validThru={validThru} vendor={vendor} focused={focus}/>
+            <Card  
+            cardNumber={ cardNumber } 
+            cardHolder={ cardHolder } 
+            validThru={ validThru } 
+            vendor={ vendor } 
+            focused={ focus }/>
             </article>
 
             <form className='card-form__form' onSubmit={ handleSubmit }>
                 <p>card number</p>
-                <input className='card-form__bigfield' type="tel" maxLength={16} minLength={16} placeholder=' XXXX XXXX XXXX XXXX' name='cardNumber' value={ cardNumber } onChange={ (event) => setCardNumber(event.target.value) } onFocus={event => setFocus(event.target.name)} /> 
+                <input className='card-form__bigfield' type="tel" maxLength={19} minLength={19} 
+                placeholder=' XXXX XXXX XXXX XXXX' name='cardNumber' value={ handleCardNumberDisplay() }
+                inputMode='numeric' pattern='[0-9\s]{13,19}' autoComplete='cc-number'
+                onFocus={ event => setFocus(event.target.name) }
+                onChange={ (event) => setCardNumber(event.target.value) }  /> 
+               
                 <p>cardholder name</p> 
-                <input className='card-form__bigfield' type="text" placeholder=' FIRSTNAME & LASTNAME' name='cardHolder' value={cardHolder} onChange={ (event) => setCardHolder(event.target.value) } onFocus={event => setFocus(event.target.name)} />
+                <input className='card-form__bigfield' type="text" 
+                placeholder=' FIRSTNAME & LASTNAME' name='cardHolder'
+                pattern='[a-zA-Z]*'
+                value={ cardHolder } onFocus={ event => setFocus(event.target.name) } 
+                onChange={ (event) => setCardHolder(event.target.value) } />
+
                 <article className='card-form__smallfields'>
                     <article>
                         <p>valid thru</p> 
-                        <input className='card-form__smallfield' type="text" maxLength={5} minLength={4} placeholder=' DD/MM' name='validThru' value={validThru} onChange={ (event) => setValidThru(event.target.value) } onFocus={event => setFocus(event.target.name)}/>
+                        <input className='card-form__smallfield' type="text" maxLength={5} minLength={5}
+                        placeholder=' DD/MM' name='validThru' value={ handleValidDisplay() } 
+                        onFocus={ event => setFocus(event.target.name) }
+                        onChange={ (event) => setValidThru(event.target.value) } />
                     </article>
                     <article>
-                    <p>ccv</p>
-                    <input className='card-form__smallfield' type="text" maxLength={3} minLength={3} placeholder=' CCV' name='ccv' onChange={ (event) => setCcv(event.target.value) }  />
+                        <p>ccv</p>
+                        <input className='card-form__smallfield' type="text" maxLength={3} minLength={3} 
+                        placeholder=' CCV' name='ccv' onChange={ (event) => setCcv(event.target.value) }  />
                     </article>
                 </article>
+
                 <label htmlFor="">vendor</label>
                 <select className='card-form__bigfield' name='vendor' value={ vendor } onChange={ handleSelect }>
                     <option value='choose vendor'> CHOOSE VENDOR </option>
