@@ -134,7 +134,6 @@ function CardForm() {
                 <p>cardholder name</p> 
                 <input className='card-form__bigfield' type="text" 
                 placeholder=' FIRSTNAME & LASTNAME' name='cardHolder'
-                pattern='[a-zA-Z]*'
                 value={ cardHolder } onFocus={ event => setFocus(event.target.name) } 
                 onChange={ (event) => setCardHolder(event.target.value) } />
 
